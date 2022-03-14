@@ -1,0 +1,28 @@
+.main {
+    background-color: black;
+    height: 100vh;
+}
+
+ul {
+    margin: 0;
+}
+
+
+.list-of-movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.movie-img {
+    margin-right: 10px;
+    box-shadow: 3px 2px 2px blue;
+    z-index: 90;
+    transition: all 0.4s ease;
+}
+
+.movie-img:hover {
+    transform: scale(1.1)
+}

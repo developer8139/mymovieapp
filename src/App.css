@@ -1,0 +1,72 @@
+.App {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url('./assets/movietheater.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.App::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  z-index: 70;
+}
+
+
+.movie-word {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.link {
+  text-decoration: none;
+  z-index: 90;
+  position: absolute;
+  top: 55%;
+  border: 2px solid white;
+  border-radius: 300px;
+  padding: 10px;
+}
+
+
+
+@media screen and (max-width: 700px) {
+  .title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    z-index: 70;
+    text-align: center;
+  }
+
+
+  .link {
+    text-decoration: none;
+    z-index: 90;
+    position: absolute;
+    top: 60%;
+    border: 2px solid white;
+    border-radius: 300px;
+    padding: 10px;
+  }
+}

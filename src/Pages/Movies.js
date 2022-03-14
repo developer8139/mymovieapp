@@ -12,7 +12,7 @@ const Background = styled.div`
     background-size: cover;
     background-position: center;
     background-color: black;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     right: 0;
@@ -33,24 +33,31 @@ const Background = styled.div`
 
 export const Movies = () => {
     const [movies, setMovies] = useState([])
-    const [search, setSearch] = useState('lord of the rings')
+    const [search, setSearch] = useState('batman')
     const [isLoading, setIsLoading] = useState(false)
+    const [movie, setMovie] = useState('')
 
     useEffect(function() {
         const getMovies = async () => {
             setIsLoading(true)
-            let res = await axios.get(`https://imdb-api.com/en/API/SearchMovie/${key}/${search}`);
-            let data = await res.data.results
-            //console.log(data)
-            setMovies(data)
-            setIsLoading(false)
+            try {
+                let res = await axios.get(`https://imdb-api.com/en/API/SearchMovie/${key}/${movie === "" ? search : movie}`);
+                let data = await res.data.results
+                
+                if(data !== null) {
+                    setMovies(data)
+                    setIsLoading(false)
+                }
+            } catch(e) {
+                console.log(e)
+            }
         }
 
         getMovies()
-    },[search])
+    },[search, movie])
     return (
         <Background img={movies.length > 0 ? movies[0].image : ""}>
-            <Search search={search}/>
+            <Search search={search} setSearch={setSearch} setMovie={setMovie}/>
             <ul className="list-of-movies">
                 {!isLoading ? movies.map(movie => <Movie key={movie.id} url={movie.image}/>) : <h1 style={{color: 'white'}}>Loading posters....</h1>}
             </ul>

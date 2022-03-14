@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import '../navbar.css'
 
 const NavBarr = styled.ul`
     display: flex;
@@ -16,6 +17,13 @@ const NavItem = styled.li`
     list-style: none;
     text-transform: uppercase;
     cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+
+
+    :hover {
+        color: purple;
+    }
 `
 
 
@@ -26,7 +34,9 @@ export const NavBar = () => {
                 <Link to="/">
                     <NavItem>Home</NavItem>
                 </Link>
-                <NavItem>Favorites</NavItem>
+                <Link to="/favorites">
+                    <NavItem>Favorites</NavItem>
+                </Link>
                 <Link to="/movies">
                     <NavItem>Movies</NavItem>
                 </Link>

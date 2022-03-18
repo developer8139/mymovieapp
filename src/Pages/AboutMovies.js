@@ -1,6 +1,7 @@
 import {useLocation} from 'react-router-dom'
 import '../about.css'
 
+
 export const AboutMovies = () => {
     const location = useLocation();
     const data = location.state

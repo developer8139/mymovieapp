@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import {Search} from './Search';
 import '../navbar.css'
 
 const NavBarr = styled.ul`
@@ -12,8 +13,6 @@ const NavBarr = styled.ul`
     justify-content: space-evenly;
     background-color: black;
     padding: 15px;
-    box-shadow: 2px 0px 2px black;
-    opacity: 0.7;
 `
 
 const NavItem = styled.li`
@@ -30,19 +29,21 @@ const NavItem = styled.li`
 `
 
 
-export const NavBar = () => {
+export const NavBar = ({search, setSearch}) => {
     return (
         <nav>
             <NavBarr>
-                <Link to="/">
+                <span style={{textTransform: "uppercase", fontWeight: "bold"}}>Movie App</span>
+                <Link to="/" style={{textDecoration: "none"}}>
                     <NavItem>Home</NavItem>
                 </Link>
-                <Link to="/favorites">
+                <Link to="/favorites" style={{textDecoration: "none"}}>
                     <NavItem>Favorites</NavItem>
                 </Link>
-                <Link to="/movies">
+                <Link to="/movies" style={{textDecoration: "none"}}>
                     <NavItem>Movies</NavItem>
                 </Link>
+                <Search search={search} setSearch={setSearch}/>
             </NavBarr>
         </nav>
     )

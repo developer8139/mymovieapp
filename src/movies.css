@@ -1,10 +1,15 @@
-
+.movieCarousel {
+    position: absolute;
+    top: 64px;
+    box-shadow: 2px 0 2px black;
+}
 .list-of-movies {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     height: 740px;
     overflow: auto;
+    margin-top: 100px;
     z-index: 90;
 }
 
@@ -16,6 +21,9 @@
     border-radius: 4px;
     transition: all 0.4s ease;
     border: 2px solid rgba(167, 167, 11, 0.459);
+    animation-play-state: paused;
+    animation-name: selected;
+    animation-duration: 8s;
 }
 
 
@@ -39,7 +47,7 @@
     cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
-    width: 160px;
+    width: 180px;
     background-color: transparent;
     color: white;
     border-radius: 5px;
@@ -50,6 +58,11 @@
 .fav-btn:hover {
     background-color:aquamarine;
     color: black;
+    animation-play-state: running;
 }
 
 
+@keyframes selected {
+    from {border: 2px solid rgba(167, 167, 11, 0.459)}
+    to {border: 5px solid rgb(23, 23, 184)}
+}

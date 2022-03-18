@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
+
 
 
 
@@ -13,22 +13,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
   background-image: url('./assets/movietheater.jpg');
   background-size: cover;
   background-position: center;
 }
 
-
-.App::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  background-color: black;
-  opacity: 0.5;
-  width: 100vw;
-  height: 100vh;
-}
 
 
 .title {

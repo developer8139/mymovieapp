@@ -8,10 +8,8 @@ export const Search = ({search, setSearch}) => {
 
 
     return (
-        <div className="container">
             <form className="search-form">
                 <input className="search" placeholder="Enter a title" value={search} onChange={handleSearchValue}/>
             </form>
-        </div>
     )
 }

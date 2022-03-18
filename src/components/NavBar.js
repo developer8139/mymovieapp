@@ -4,13 +4,16 @@ import '../navbar.css'
 
 const NavBarr = styled.ul`
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 23%;
     color: white;
     z-index: 100;
-    width: 50%;
-    justify-content: space-between;
+    width: 100vw;
+    justify-content: space-evenly;
+    background-color: black;
+    padding: 15px;
+    box-shadow: 2px 0px 2px black;
+    opacity: 0.7;
 `
 
 const NavItem = styled.li`

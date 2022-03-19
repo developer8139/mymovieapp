@@ -2,7 +2,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import { Movie } from './Movie';
 import { GetVideos } from '../customHooks/GetVideos';
 import {useState, useEffect} from 'react'
-import '../movies.css'
+import '../styles/movies.css'
 
 export const MovieCarousel = () => {
     const [index, setIndex] = useState(0);

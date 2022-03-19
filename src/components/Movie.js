@@ -1,4 +1,4 @@
-import '../movies.css';
+import '../styles/movies.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -12,10 +12,10 @@ export const Movie = ({url, movies, info, date, id}) => {
     }
     const handleMovieFavorites = (title, url) => {
         axios.post('http://localhost:9356/movie', {
-            title: title,
+            title,
             poster: url
         }).then(e => {
-            console.log('Movie not sent to favorites')
+            console.log('Movie sent to favorites')
         })
     }
     return (

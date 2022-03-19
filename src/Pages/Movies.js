@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import '../movies.css';
+import '../styles/movies.css';
 import { Movie } from "../components/Movie";
 import axios from 'axios'
 import styled from 'styled-components';
 import { CurrentlyTrending } from "../components/CurrentlyTrending";
-const API_KEY = '208ef6e69a655dc9e5f18b04ae4dca00'
+
 
 const Background = styled.div`
     background-image: url(${props => props.img});
@@ -18,27 +18,29 @@ const cache = {};
 
 
 
-export const Movies = ({search}) => {
+export const Movies = ({search, setShow}) => {
     const [movies, setMovies] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [movie, setMovie] = useState('')
     
+    
 
     useEffect(function() {
+        setShow(true)
         const getMovies = async () => {
             setIsLoading(true)
             try {
-                let res = await axios.get(`https://api.themoviedb.org/3/search/movie/?api_key=${API_KEY}&query=${search}&video=true&include_adult=true`);
+                let res = await axios.get(`http://localhost:9356/bunchofmovies/${search}`);
+            
                 if(!cache.hasOwnProperty('movies')) {
                     cache["movies"] = res
                 }
                 
-                console.log(res)
                 if(cache.movies in cache) {
                     setMovies(cache.movies)
                     setIsLoading(false)
                 } else {
-                    setMovies(res.data.results)
+                    setMovies(res.data)
                     setIsLoading(false)
                 }
             } catch(e) {
@@ -47,6 +49,8 @@ export const Movies = ({search}) => {
         }
 
         getMovies()
+
+        return () => setShow(false)
     },[search, movie])
 
     return (

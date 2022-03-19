@@ -1,5 +1,5 @@
 import {useLocation} from 'react-router-dom'
-import '../about.css'
+import '../styles/about.css'
 
 
 export const AboutMovies = () => {

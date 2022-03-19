@@ -1,0 +1,25 @@
+.favorites-list {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    border: 1px solid black;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+
+.favorites-title {
+    color: black;
+}
+
+
+.no-favorites {
+    color: black;
+    margin-top: 120px;
+    text-align: center;
+}
+
+
+
+

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import {Search} from './Search';
-import '../navbar.css'
+import '../styles/navbar.css'
 
 const NavBarr = styled.ul`
     display: flex;
@@ -29,7 +29,7 @@ const NavItem = styled.li`
 `
 
 
-export const NavBar = ({search, setSearch}) => {
+export const NavBar = ({search, setSearch, showSearch}) => {
     return (
         <nav>
             <NavBarr>
@@ -43,7 +43,7 @@ export const NavBar = ({search, setSearch}) => {
                 <Link to="/movies" style={{textDecoration: "none"}}>
                     <NavItem>Movies</NavItem>
                 </Link>
-                <Search search={search} setSearch={setSearch}/>
+                {showSearch ? <Search search={search} setSearch={setSearch}/> : ""}
             </NavBarr>
         </nav>
     )

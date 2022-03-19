@@ -14,5 +14,4 @@ I built this because I really love movies. This app also was for me to practice 
 2. react-bootstrap
 3. styled-components
 4. axios
-5. postgres
-6. sequelize
+5. 

@@ -7,7 +7,7 @@ export const Favorites = () => {
     const [favorites, setFavorites] = useState([]);
 
     useEffect(function() {
-        axios.get('http://localhost:9356/movies').then(data => {
+        axios.get('http://localhost:9356/movieroutes/movies').then(data => {
             setFavorites(data.data)
         }).catch(e => {
             console.log(e)
@@ -16,7 +16,7 @@ export const Favorites = () => {
 
 
     const handleDeleteMovie = async (title) => {
-        let removed = await axios.delete('http://localhost:9356/deletemovie', {
+        let removed = await axios.delete('http://localhost:9356/movieroutes/deletemovie', {
            data: {
                title: title
            }

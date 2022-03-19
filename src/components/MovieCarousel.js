@@ -7,7 +7,7 @@ import '../styles/movies.css'
 export const MovieCarousel = () => {
     const [index, setIndex] = useState(0);
     const [videos, handleVideos] = GetVideos();
-    const data = videos.data !== undefined ? videos.data.results : [];
+    const data = videos !== undefined ? videos : [];
 
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex)

@@ -30,7 +30,7 @@ export const Movies = ({search, setShow}) => {
         const getMovies = async () => {
             setIsLoading(true)
             try {
-                let res = await axios.get(`http://localhost:9356/bunchofmovies/${search}`);
+                let res = await axios.get(`http://localhost:9356/movieroutes/bunchofmovies/${search}`);
             
                 if(!cache.hasOwnProperty('movies')) {
                     cache["movies"] = res

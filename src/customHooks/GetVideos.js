@@ -6,8 +6,9 @@ export const GetVideos = () => {
     const [video, setVideo] = useState([])
 
     const handleVideos = async () => {
-        let videos = await axios.get(`http://localhost:9356/currentlytrending`);
-        setVideo(videos)
+        let videos = await axios.get(`http://localhost:9356/movieroutes/currentlytrending`);
+        console.log(videos)
+        setVideo(videos.data)
     }
 
     return [video, handleVideos]

@@ -11,7 +11,7 @@ export const Movie = ({url, movies, info, date, id}) => {
         id: id
     }
     const handleMovieFavorites = (title, url) => {
-        axios.post('http://localhost:9356/movie', {
+        axios.post('http://localhost:9356/movieroutes/movie', {
             title,
             poster: url
         }).then(e => {
